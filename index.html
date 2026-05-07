@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Slicer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SAMPLE SLICER</h1>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <div id="drop-zone" class="drop-zone">
+          <p>Drag & Drop Audio Files Here</p>
+          <p class="subtitle">or click to browse</p>
+          <input type="file" id="file-input" multiple accept=".wav,.mp3">
+        </div>
+      </section>
+
+      <section class="files-section">
+        <h2>Uploaded Files</h2>
+        <ul id="file-list" class="file-list">
+          <li class="empty-message">No files uploaded yet.</li>
+        </ul>
+      </section>
+
+      <section class="controls-section">
+        <div class="control-group">
+          <label for="spacing-slider">Spacing Between Samples</label>
+          <div class="slider-container">
+            <input type="range" id="spacing-slider" min="0" max="2000" value="500">
+            <span id="spacing-value">500ms</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions-section">
+        <button id="merge-btn" class="btn primary-btn">Merge Samples</button>
+        <button id="preview-btn" class="btn primary-btn" disabled style="background-color: var(--accent-color);">Play Preview</button>
+        <button id="download-btn" class="btn secondary-btn" disabled>Download Output</button>
+      </section>
+      <div id="status-message" style="display: none; margin-top: 1.5rem; padding: 1rem; border: 4px solid var(--border-color); background-color: var(--panel-bg); font-weight: 700; font-size: 1.1rem; box-shadow: 4px 4px 0px var(--border-color); text-transform: uppercase;"></div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
